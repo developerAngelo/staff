@@ -1,0 +1,390 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        
+        <script src="https://smtpjs.com/v3/smtp.js"></script>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+        <title>ラーメン世界</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+        <link
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css"
+        rel="stylesheet"
+        media="screen,projection"
+        />
+
+        <!-- Font Awesome JS -->
+        <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+        <link rel="shortcut icon" href="images/imageTab.ico"/>
+
+
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3 id="headerBar">ラーメン世界</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <!-- <p>Dummy Heading</p> -->
+                    <li>
+                        <a href="store.html">店舗</a>
+                    </li>
+
+                    <li >
+                            <a href="mainCategory.html">メニュー</a>
+                    </li>
+                    <li >
+                        <a href="coupon.html">クーポン</a>
+                </li>
+                <li>
+                    <a href="couponAnalytics.html">QR 分析</a>
+                </li>
+                <li>
+                    <a href="qrcode.html">QR コード</a>
+                </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ログ</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="mainTransactions.html">トランザクション</a>
+                            </li>
+                            <!-- <li>
+                                <a href="transactionHistory.html">Customer Report</a>
+                            </li> -->
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="campaign.html">管理</a>
+                    </li>
+
+                    <li>
+                        <a href="rank.html">ランク</a>
+                    </li>
+                    <li class="active">
+                        <a href="staff.html">スタッフ</a>
+                    </li>
+                    <li>
+                        <a href="notification.html">通知</a>
+                    </li>
+                    <li>
+                        <a href="globalUser.html">登録されたユーザー</a>
+                    </li>
+                    <li>
+                            <a href="#" id="signOuts">ログアウト</a>
+                    </li>
+                </ul>
+
+        
+            </nav>
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        
+
+                
+                    </div>
+                </nav>
+
+                <div>
+                    <div style="display: none;" id="blur-background">
+
+                    </div>
+                    <div class="btn-align-store">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalConfirmEmailss"><i class="fa fa-plus" aria-hidden="true">スタッフを追加</i></button><br><br>
+                    </div>
+
+                    <input placeholder=" 検索" type="text" class="searchInput" id="search_id" title="Search staff"><br>
+                        <table  id="ex-table-staff" class="table table-hover table-responsive" >
+                                <div  id="loading">
+                                        <img src="../images/loadingGif.gif"  />
+                                    </div>
+                                    <div style="display: none;" id="table-store-msg">
+                                        <!-- <p> no data available</p> -->
+                                    </div>
+                                <thead>
+                                    <tr>
+                                        <th style="display: none;"></th>
+                                        <th style="display: none;"></th>
+                                        <th style="display: none;"></th>
+                                        <th style="display: none;"></th>                                
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="tr">
+                            
+                                        <!-- <td  id="editBtn"><button onclick="myFunction();" style="display: none;" type="button" data-toggle="modal" data-target="#edit" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td> -->
+                                        <!-- <td  id="deleteBtn"><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td> -->
+                                    </tr>
+                    
+
+                                    
+
+                                    
+                                    <!-- TODO: Add SDKs for Firebase products that you want to use
+                                        https://firebase.google.com/docs/web/setup#available-libraries -->
+                           
+                                    
+                                    <script>
+                                    // Your web app's Firebase configuration
+                                var firebaseConfig = {
+                                apiKey: "AIzdsadaSyD1GZasdfdfasdasdastk6K-FlFK23123-40kvo-fL213N4basJk_Ky1235dGKo",
+                                authDomain: "sakura-dbms.firebaseapp.com",
+                                databaseURL: "https://sakdsura-dbms.firebaseio.com",
+                                projectId: "sakura-dbms",
+                                storageBucket: "sakura-dbms.appspot.com",
+                                messagingSenderId: "93646fdsdsdfd6283506",
+                                appId: "1:936466283506:web:bfdsdsfdfdf38862af84a0fd8f2496b",
+                                measurementId: "G-7WFds2DG4EsdsdV1WT"
+                                };
+                                    // Initialize Firebase
+                                    firebase.initializeApp(firebaseConfig);
+
+
+                                    const auth = firebase.auth();
+                                    const db = firebase.firestore();
+
+                                    </script>
+                                
+                                <script src="js/header.js"></script>
+
+                    
+                                </tbody>
+                                </table>
+                        
+                </div>
+            </div>
+        </div>
+
+        <form id='forminsertEm' commandName='insert' cssClass='form-horizontal' >
+                <div class="modal fade modalConfirmEmails" id="modalConfirmEmailss">
+                        <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h4 class="modal-title"><i class='glyphicon glyphicon-envelope text-info'></i>スタッフメール</h4>
+                                    </div>
+                                <br>
+                                    <div class="modal-body">
+                                        <div class="col-sm-offset-4" style="text-align: center;">
+                                            <div class='form-group' >
+                                                <div class='input-group col-xs-8' data-validate="email">
+                                                    <input type="text" class="form-control " name="validate-email" id="staff_id" placeholder="Eメール" required>
+                                                    <span class="input-group-addon" style="display: none;"><span class="glyphicon glyphicon-exclamation-sign"></span></span><br>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                
+                                        <div class="store-container">
+                                            <select id="storeStaff" class="form-control" onchange="selectedValueStore(this);">
+                                                <option>Select Store</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer" style="text-align: center; ">
+                                        <button type="button" class="btn btn-info"  onclick="registerStaffUsers();">追加</button>
+                                        <!-- <button type="button" class="btn btn-info" onclick="branchListed();" data-dismiss="modal">Submit</button> -->
+                                        <!-- <button type="button" class="btn btn-info" onclick="testingValue();" data-dismiss="modal">TEST SUBMIT</button> -->
+                                        <button type="reset" class="btn btn-default"  id="close-Staff" data-dismiss="modal">戻る</button>
+                                    </div> 
+                                </div>
+                        </div>
+                </div>
+        </form>
+
+        <div id="edit-staff" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Change assignment</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <!-- <input id="edit-manager-text" type="text" class="form-control" name="fname"> -->
+                <!-- <img id="imgUpdate_id" src="" alt=""> -->
+                <div class="col-sm-offset-4" style="text-align: center;">
+                        <div class='form-group' >
+                            <div class='input-group col-xs-8'>
+                                <div class="form-group">
+                                        <label id="storeStaffSelects">Select Stores</label>
+                                        <select class="browser-default custom-select"  id="editselectNumber" >
+                                                <!-- <option>Select store</option> -->
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ////////// -->
+                    
+                    </div>
+                    <div class="col-sm-offset-4" style="text-align: center;">
+                            <div class='form-group' >
+                                <div class='input-group col-xs-8'>
+                                    <div class="form-group">
+                                            <label id="branchStaffSelects">Select Stores</label>
+                                            <select class="browser-default custom-select"  id="editselectBranchess" >
+                                                    <!-- <option>Select store</option> -->
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>                                             
+                        </div>
+        
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="up" class="btn btn-warning" data-dismiss="modal" onclick="finalEditAssignBranchStore();">更新</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="delete-staff" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <strong>削除してもよろしいですか？</strong>
+            </div>
+            <div class="modal-footer">
+            <button type="button" id="del" onclick="removingDataInManager();" class="btn btn-danger" data-dismiss="modal">削除</button>
+            <!-- <button type="button" id="del" onclick="deleteR();" class="btn btn-danger" data-dismiss="modal">Delete</button> -->
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">戻る</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="staff-Information" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-top">
+            <div class="modal-header">
+                    <h4 class="modal-title">スタッフ情報</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="phragraph-show"> 
+                <Strong>スタッフメール </Strong><p id="emailStaffs">.............</p>
+                </div>
+            
+                <div class="phragraph-show">
+                    <Strong>パスワード </Strong><p id="passStaff">.............</p>
+                </div>
+                <div class="phragraph-show"> 
+                <Strong>ストア </Strong><p id="branchStaffs">.............</p>
+                </div>
+                <div class="phragraph-show"> 
+                <Strong>ストア場所 </Strong><p id="locationStaffs">.............</p>
+                </div>
+                <div class="phragraph-show"> 
+                <strong>スタッフ登録日付 </strong><p id="dateStaffs">.............</p>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="staff-message" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-top">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <strong>Username and Password is send to the email. we need to verify first the email before it proceed.</strong>
+            </div>
+            <div class="modal-footer">
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+        <!-- <script src="Helper/checkLogin.js"></script> -->
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>  
+             
+    <script  src="js/staff.js"></script>
+        
+    </body>
+
+    </html>
+
+        <!-- <div id="add-staff" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <input id = "staff_id" type="email"  placeholder="Staff email" name="Staff" class="form-control" autocomplete="off"/>
+                        <select id="selectNumber">
+                                <option>Select store</option>
+                            </select>
+                    </div>
+                    <div class="modal-footer"> -->
+                        <!-- <button type="button" id="ex" class="btn btn-primary" data-dismiss="modal" onclick="saveStore();">Add</button> -->
+                        <!-- <button type="button" id="ex" class="btn btn-primary" data-dismiss="modal" onclick="createAcountViaEmail();">Add staff </button>
+
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
